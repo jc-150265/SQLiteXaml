@@ -13,5 +13,32 @@ namespace SQLiteXaml
         {
             InitializeComponent();
         }
+
+        //Insertメソッド
+        private void InsertClicked(object sender, EventArgs e)
+        {
+            string book = insert.Text;
+            BookModel.insertBook(book);
+        }
+
+        //Deleteメソッド
+        private void DeleteClicked(object sender, EventArgs e)
+        {
+            int book = int.Parse(delete.Text);
+            BookModel.deleteBook(book);
+        }
+
+        //Selectメソッド
+        private void SelectClicked(object sender, EventArgs e)
+        {
+            //Bookテーブルの行データを取得
+            var query = BookModel.selectBook(); //中身はSELECT * FROM [Book]
+            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            foreach (var user in query)
+            {
+                //Userテーブルの名前列をLabelに書き出す
+                layout.Children.Add(new Label { Text = user.Name });
+            }
+        }
     }
 }

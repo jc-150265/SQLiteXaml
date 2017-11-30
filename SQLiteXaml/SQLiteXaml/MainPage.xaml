@@ -5,9 +5,33 @@
              x:Class="SQLiteXaml.MainPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            //Insertボタンです
+            <Button Text="Insert!"
+                    WidthRequest="60"
+                    TextColor="Red"
+                    Clicked="InsertClicked"/>
+            <Entry
+                WidthRequest="60"
+                Style="string"
+                x:Name="insert"
+                />
+            
+            //Deleteボタンです
+            <Button Text="Delete!"
+                    WidthRequest="60"
+                    TextColor="Red"
+                    Clicked="DeleteClicked"/>
+            <Entry
+                WidthRequest="60"
+                x:Name="delete"
+                />
+
+            //selectボタンです
+            <Button Text="Select!"
+                    WidthRequest="60"
+                    TextColor="Red"
+                    Clicked="SelectClicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

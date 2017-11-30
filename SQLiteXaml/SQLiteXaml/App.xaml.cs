@@ -9,8 +9,14 @@ namespace SQLiteXaml
 {
     public partial class App : Application
     {
-        public App()
+        //データベースのパスを格納
+        public static string dbPath;
+
+        public App(string dbPath)
         {
+            //AppのdbPathに引数のパスを設定します
+            App.dbPath = dbPath;
+
             InitializeComponent();
 
             MainPage = new SQLiteXaml.MainPage();
