@@ -4,33 +4,33 @@
              xmlns:local="clr-namespace:SQLiteXaml"
              x:Class="SQLiteXaml.MainPage">
     <ContentPage.Content>
-        <StackLayout>
-            <!--
-            <!-- Insertボタンです --
+        <StackLayout>            
+            <!-- 
+            Insertボタンです
             <Button Text="Insert!"
                     WidthRequest="60"
                     TextColor="Red"
-                    Clicked="InsertClicked"/>
+                    Clicked="InsertClicked"/>            
+            
             <Entry
                 WidthRequest="60"
                 Style="string"
                 x:Name="insert"
                 />
             
-            <!-- Deleteボタンです --
+            Deleteボタンです
             <Button Text="Delete!"
                     WidthRequest="60"
                     TextColor="Red"
                     Clicked="DeleteClicked"/>
-            <!--
+            
             Entryで値指定したいけど今は強制終了しちゃう
             <Entry
                 WidthRequest="60"
                 x:Name="delete"
-                />
-            --
+                />            
 
-            <!-- selectボタンです --
+            selectボタンです
             <Button Text="Select!"
                     WidthRequest="60"
                     TextColor="Red"
