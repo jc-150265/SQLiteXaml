@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace SQLiteXaml
@@ -15,19 +11,17 @@ namespace SQLiteXaml
 
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
-            //Userテーブルに適当なデータを追加
-            BookModel.insertBook("鈴木");
-            BookModel.insertBook("田中");
-            BookModel.insertBook("斎藤");
+            //Bookテーブルに適当なデータを追加
+            BookModel.insertBook("Test");
             //↑この辺をボタンに突っ込む
 
-            //Userテーブルの行データを取得
+            //Bookテーブルの行データを取得
             var query = BookModel.selectBook();
 
-            foreach (var user in query)
+            foreach (var book in query)
             {
                 //Userテーブルの名前列をLabelに書き出します
-                layout.Children.Add(new Label { Text = user.Name });
+                layout.Children.Add(new Label { Text = book.Name });
             }
 
             Content = layout;
