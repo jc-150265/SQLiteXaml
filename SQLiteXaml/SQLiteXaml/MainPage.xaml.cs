@@ -17,15 +17,16 @@ namespace SQLiteXaml
         //Insertメソッド
         private void InsertClicked(object sender, EventArgs e)
         {
-            string book = insert.Text;
-            BookModel.insertBook(book);
+            string book = insert.Text; 
+            BookModel.insertBook(book); //Entryで受け取った値をInsertする
         }
 
         //Deleteメソッド
         private void DeleteClicked(object sender, EventArgs e)
         {
-            int book = int.Parse(delete.Text);
-            BookModel.deleteBook(book);
+            BookModel.deleteBook(1);
+            //int book = int.Parse(delete.Text);
+            //BookModel.deleteBook(book);
         }
 
         //Selectメソッド

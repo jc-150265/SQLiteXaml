@@ -13,12 +13,12 @@ namespace SQLiteXaml
     {
         //プライマリキー　自動採番されます
         [PrimaryKey, AutoIncrement, Column("_id")]
-        //idカラム
+        //idカラム 主キー
         public int Id { get; set; }
         //名前カラム
         public string Name { get; set; }
 
-        //Userテーブルに行追加するメソッドです
+        //Bookテーブルに行追加するメソッドです
         //------------------------Insert文的なの--------------------------
         public static void insertBook(string name)
         {
@@ -28,10 +28,10 @@ namespace SQLiteXaml
 
                 try
                 {
-                    //データベースにUserテーブルを作成します
+                    //データベースにBookテーブルを作成します
                     db.CreateTable<BookModel>();
 
-                    //Userテーブルに行追加します
+                    //Bookテーブルに行追加します
                     db.Insert(new BookModel() { Name = name });
 
                     db.Commit();
@@ -46,7 +46,7 @@ namespace SQLiteXaml
                 }
             }
         }
-        
+        /*
         //id name オーバーロード
         public static void insertBook(int id, string name)
         {
@@ -68,9 +68,9 @@ namespace SQLiteXaml
                 }
             }
         }
-        
+        */
 
-        //Userテーブルのuserを削除するメソッド
+        //Bookテーブルのbookを削除するメソッド (今は全削除)
         //--------------------------delete文的なの--------------------------
         public static void deleteBook(int id)
         {
@@ -82,8 +82,9 @@ namespace SQLiteXaml
                 try
                 {
                     db.CreateTable<BookModel>();
+                    db.DropTable<BookModel>();
 
-                    db.Delete(id);
+                    //db.Delete(id);
                 }
                 catch (Exception e)
                 {
@@ -95,7 +96,7 @@ namespace SQLiteXaml
         }
 
 
-        //Userテーブルの行データを取得します
+        //Bookテーブルの行データを取得します
         //--------------------------select文的なの--------------------------
         public static List<BookModel> selectBook()
         {
@@ -110,7 +111,6 @@ namespace SQLiteXaml
                 }
                 catch (Exception e)
                 {
-
                     System.Diagnostics.Debug.WriteLine(e);
                     return null;
                 }

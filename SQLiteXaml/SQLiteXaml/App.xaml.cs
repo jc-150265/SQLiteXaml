@@ -19,7 +19,7 @@ namespace SQLiteXaml
 
             InitializeComponent();
 
-            MainPage = new SQLiteXaml.MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
