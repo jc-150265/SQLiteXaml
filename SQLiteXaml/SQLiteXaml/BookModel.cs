@@ -32,7 +32,7 @@ namespace SQLiteXaml
                     db.CreateTable<BookModel>();
 
                     //Bookテーブルに行追加します
-                    db.Insert(new BookModel() { Name = name });
+                    db.Insert(new BookModel() { Name = name }); //受け取ったnameをNameに入れる
 
                     db.Commit();
 
